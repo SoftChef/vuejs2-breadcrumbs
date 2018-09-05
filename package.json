@@ -6,6 +6,14 @@
     "scripts": {
 
     },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/SoftChef/vuejs2-breadcrumbs.git"
+    },
+    "bugs": {
+      "url": "https://github.com/SoftChef/vuejs2-breadcrumbs/issues"
+    },
+    "homepage": "https://github.com/SoftChef/vuejs2-breadcrumbs#readme",
     "keywords": [
         "Vue",
         "Breadcrumbs"
