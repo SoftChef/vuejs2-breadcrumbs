@@ -45,7 +45,6 @@ options.breadcrumbs = {
 Vue.use(VueBreadcrumbs, options)
 ```
 
-
 ## Register
 
 ```
@@ -94,7 +93,7 @@ VueBreadcrumbs.register('user.profile', ({ user }) => {
           parent: 'users',
           links: [
               {
-                  text: 'Users',
+                  text: `User: ${user.name}`,
                   to: {
                       name: 'user.profile',  // use for vue-router
                       params: {
@@ -118,7 +117,27 @@ Common
 
 With your parameters
 ```
-<breadcrumbs :params="{ user: user }" />
+<breadcrumbs :params="{ user: { id: 1, name: 'User1' } }" />
+```
+
+## this.$breadcrumbs(register_name, params)
+
+You can use ```this.$breadcrumbs``` to get the nodes by name and parameters
+```
+export default {
+    data() {
+        return {
+            user: {
+                id: 1,
+                name: 'User1'
+            }
+        }
+    },
+    mounted() {
+        let nodes = this.$breadcrumbs('user.profile', user)
+        // Display nodes by self
+    }
+}
 ```
 
 ## Customize Template
@@ -146,7 +165,7 @@ Sample - Use on Vuetify design
             nodes() {
                 const breadcrumb_name = this.current_route || this.$route.name
                 if (breadcrumb_name) {
-                    // this.$breadcrumbs() can get nodes by name and parameters
+                    // this.$breadcrumbs() can get the nodes by name and parameters
                     return this.$breadcrumbs(breadcrumb_name, this.params)
                 } else {
                     return []
