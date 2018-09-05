@@ -1,0 +1,19 @@
+{
+    "name": "vuejs2-breadcrumbs",
+    "version": "1.0.2",
+    "description": "",
+    "main": "src/Breadcrumbs.js",
+    "scripts": {
+
+    },
+    "keywords": [
+        "Vue",
+        "Breadcrumbs"
+    ],
+    "author": "SoftChef",
+    "license": "SoftChef",
+    "dependencies": {
+        "vue": "^2.5.0",
+        "vue-router": "^3.0.0"
+    }
+}
