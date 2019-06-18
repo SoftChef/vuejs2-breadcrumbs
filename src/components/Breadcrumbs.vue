@@ -1,6 +1,6 @@
 <template>
     <ul v-if="nodes">
-        <li v-for="(node, index) in nodes">
+        <li v-for="(node, index) in nodes" :key="index">
             <template v-if="index < nodes.length - 1">
                 <router-link :to="node.to">{{ node.text }}</router-link>
                 <span>{{ divider || '/' }}</span>
@@ -11,7 +11,7 @@
         </li>
     </ul>
 </template>
-<style scoped>
+<style lang="stylus" scoped>
     ul {
         list-style: none;
         padding: 0;
@@ -35,9 +35,9 @@
         },
         computed: {
             nodes() {
-                const breadcrumb_name = this.$route.name || null
-                if (breadcrumb_name) {
-                    return this.$breadcrumbs(breadcrumb_name, this.params)
+                const breadcrumbName = this.$route.name || null
+                if (breadcrumbName) {
+                    return this.$breadcrumbs(breadcrumbName, this.params)
                 } else {
                     return []
                 }
