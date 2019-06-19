@@ -8,7 +8,8 @@ module.exports = {
     entry: './src/Breadcrumbs.js',
     output: {
         path: path.resolve(`${__dirname}/dist`),
-        filename: 'Breadcrumbs.js'
+        filename: 'Breadcrumbs.js',
+        libraryTarget: 'commonjs2'
     },
     module: {
         rules: [
